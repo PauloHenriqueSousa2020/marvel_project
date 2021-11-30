@@ -18,8 +18,8 @@ export const Container = styled.div`
   min-width: 70%;
   min-height: 80%;
   background: #f9fafc;
-  border: 10px solid ${({ theme }) => theme.colors.background};
-  border-radius: 31px;
+  border: 0.6rem solid ${({ theme }) => theme.colors.background};
+  border-radius: 2rem;
   padding: 2rem;
 `;
 
@@ -55,34 +55,31 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
 
-  .container-image {
-    border: 4px solid #0A0F0D;
-    height: 300px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  .blockImage {
+    border: 0.25rem solid ${({ theme }) => theme.colors.text};
+    height: 18rem;
+    box-shadow: 0 0.5rem 1.4rem ${({ theme }) => theme.colors.text};
     
     img {
       height: 100%;
     }
   }
 
-  .context {
+  .infosContainer {
     position: relative;
 
-    .name {
+    .title {
       display: inline-flex;
-
       position: absolute;
-
-      left: -25px;
-      top: -20px;
-
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      left: -1.5rem;
+      top: -1.2rem;
+      box-shadow: 0 0.5rem 1.4rem ${({ theme }) => theme.colors.text};
       
       h2 {
         padding: 0.5rem 0.8rem;
         background-color: #f9f9f9;
-        border: 4px solid #0A0F0D;
-        color: #0A0F0D;
+        border: 0.5rem solid ${({ theme }) => theme.colors.text};
+        color: ${({ theme }) => theme.colors.text};
         font-size: 1rem;
       }
 
@@ -90,13 +87,12 @@ export const Content = styled.div`
 
     .description {
       padding: 2.5rem;
-      height: 200px;
-      border-top: 4px solid #0A0F0D;
-      border-right: 4px solid #0A0F0D;
-      border-bottom: 4px solid #0A0F0D;
-      color: #0A0F0D;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-
+      height: 12.5rem;
+      border-top: 0.25rem solid ${({ theme }) => theme.colors.text};;
+      border-right: 0.25rem solid ${({ theme }) => theme.colors.text};;
+      border-bottom: 0.25rem solid ${({ theme }) => theme.colors.text};;
+      color: ${({ theme }) => theme.colors.text};;
+      box-shadow: 0 0.3rem 1.2rem  ${({ theme }) => theme.colors.text};;
       display: flex;
       justify-content: center;
       align-items: center;

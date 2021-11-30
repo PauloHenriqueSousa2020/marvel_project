@@ -18,16 +18,16 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: any) => {
         </S.Close>
 
         <S.Content>
-          <div className="container-image">
+          <div className="blockImage">
             <img src={`${comicDetail.thumbnail.path}/standard_fantastic.${comicDetail.thumbnail.extension}`} alt="3-D Man" />
           </div>
 
-          <div className="context">
-            <div className="name">
+          <div className="infosContainer">
+            <div className="title">
               <h2>{comicDetail.title}</h2>
             </div>
             <div className="description">
-              <p>{comicDetail.description ? comicDetail.description : 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.'}</p>
+              <p>{comicDetail.description ? comicDetail.description : '...'}</p>
             </div>
           </div>
         </S.Content>
