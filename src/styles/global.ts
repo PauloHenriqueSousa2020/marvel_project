@@ -11,7 +11,8 @@ export default createGlobalStyle`
   body {
     font: 400 0.8rem Outfit, sans-serif;
     background: ${props => props.theme.colors.background};
-
+    color: ${props => props.theme.colors.text};
+    
     overflow: scroll;
     overflow-x: auto;
     

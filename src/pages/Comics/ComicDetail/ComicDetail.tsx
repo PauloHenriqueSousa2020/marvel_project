@@ -30,7 +30,16 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: any) => {
               <p>{comicDetail.description ? comicDetail.description : '...'}</p>
             </div>
           </div>
+
+  
         </S.Content>
+
+        
+        <S.OtherInfos>
+          <div className="infosContainer">
+            aaaaaaaaaa
+          </div>
+          </S.OtherInfos>
       </S.Container>
 
     </S.Modal>

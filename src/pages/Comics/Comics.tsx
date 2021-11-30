@@ -33,7 +33,7 @@ const Comics = () => {
       <S.Content>
         <h1>Busque os quadrinhos da Marvel</h1>
         <S.Input>
-          <AiOutlineSearch size={30} />
+          <AiOutlineSearch size={30} fill={"#000"} />
           <input
             type="text"
             placeholder="Busque um quadrinho pelo nome"

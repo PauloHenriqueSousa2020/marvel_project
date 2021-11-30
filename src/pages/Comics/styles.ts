@@ -17,7 +17,7 @@ export const Content = styled.div`
 export const Input = styled.div`
   width: 40%;
   height: 3rem;
-  background: #fff;
+  background: #fff; 
   border-radius: 2rem;
   box-shadow: 0px 3px 6px #d7d8e4;
   padding-left: 1.5rem;
@@ -30,8 +30,7 @@ export const Input = styled.div`
     padding-left: 1rem;
     border: none;
     font-size: 0.8rem;
-    color: ${props => props.theme.colors.text};
-    font-weight: ${props => props.theme.weight.bold};;
+    font-weight: ${props => props.theme.weight.bold};
   }
 
   button {
@@ -43,6 +42,7 @@ export const Input = styled.div`
     font-style: italic;
     border: none;
     cursor: pointer;
+    color: #000;
   }
 `
 export const Section = styled.div`

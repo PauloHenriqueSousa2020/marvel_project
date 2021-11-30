@@ -29,7 +29,7 @@ export const Container = styled.div`
   }
 
   span {
-    color: ${props => props.theme.colors.text};
+   
     font-size: 2rem;
     font-weight: 700;
   }
