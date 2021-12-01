@@ -116,3 +116,9 @@ export const Card = styled.div`
     border-top-right-radius: 1rem;
   }
 `
+
+export const NotFound = styled.div`
+
+  padding-top: 5rem;
+
+`

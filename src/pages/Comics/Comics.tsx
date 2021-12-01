@@ -50,32 +50,39 @@ const Comics = () => {
       </S.Content>
 
       <ContentLoad loading={loading}>
-        {totalPages && (
-          <Pagination
-            limit={limit}
-            offset={offSet}
-            setOffset={setOffSet}
-            total={totalPages}
-          />
+        {comics.length > 0 ? (
+          <>
+            {totalPages && (
+              <Pagination
+                limit={limit}
+                offset={offSet}
+                setOffset={setOffSet}
+                total={totalPages}
+              />
+            )}
+            <S.Section>
+              {comics.map((comic: ComicProps) => (
+                <S.Card
+                  key={comic.id}
+                  className={handleClassNameActives(comic.id)}
+                >
+                  <img onClick={() => handleSelectedComics(comic)} className="cardImage" src={`${comic.thumbnail.path}/standard_fantastic.${comic.thumbnail.extension}`} alt={comic.title} />
+                  <div className="cardInfo">
+                    <p className="cardName">{comic.title}</p>
+                    <p className="cardDetail" onClick={() => { handleComicDetail(comic) }}>
+                      Ver detalhes
+                      <AiOutlineSearch />
+                    </p>
+                  </div>
+                </S.Card>
+              ))}
+            </S.Section>
+          </>
+        ) : (
+          <S.NotFound>
+            <h1>Nenhum quadrinho foi encontrado na busca.</h1>
+          </S.NotFound>
         )}
-
-        <S.Section>
-          {comics.map((comic: ComicProps) => (
-            <S.Card
-              key={comic.id}
-              className={handleClassNameActives(comic.id)}
-            >
-              <img onClick={() => handleSelectedComics(comic)} className="cardImage" src={`${comic.thumbnail.path}/standard_fantastic.${comic.thumbnail.extension}`} alt={comic.title} />
-              <div className="cardInfo">
-                <p className="cardName">{comic.title}</p>
-                <p className="cardDetail" onClick={() => { handleComicDetail(comic) }}>
-                  Ver detalhes
-                  <AiOutlineSearch />
-                </p>
-              </div>
-            </S.Card>
-          ))}
-        </S.Section>
 
       </ContentLoad>
 
