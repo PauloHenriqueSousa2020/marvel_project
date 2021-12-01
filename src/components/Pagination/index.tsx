@@ -15,6 +15,8 @@ export default function Pagination({ limit, total, offset, setOffset }: Paginati
   const currentPage = offset ? offset / limit + 1 : 1;
   const firstPage = Math.max(currentPage - MAX_LEFT, 1);
 
+  console.log(Math.min(MAX_ITEMS, total))
+  console.log(Math.ceil(total/limit))
   return (
     <Container>
       <ul>
