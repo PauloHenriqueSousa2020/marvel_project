@@ -15,8 +15,8 @@ export const Modal = styled.div`
 `
 
 export const Container = styled.div`
-  min-width: 70%;
-  min-height: 80%;
+  width: 70vw;
+  height: 85%;
   background: ${({ theme }) => theme.colors.sectionBackground};
   border: 0.6rem solid ${({ theme }) => theme.colors.headerColor};
   border-radius: 2rem;
@@ -54,6 +54,7 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem;
 
   .blockImage {
     border: 0.25rem solid ${({ theme }) => theme.colors.headerColor};
@@ -80,22 +81,39 @@ export const Content = styled.div`
         padding: 0.5rem 0.8rem;
         background-color: ${({ theme }) => theme.colors.background};
         border: 0.2rem solid ${({ theme }) => theme.colors.headerColor};
-    
         font-size: 1rem;
       }
 
     }
 
-    .description {
-      min-width: 50rem;
-      max-width: 50rem;
+    .scrollBar {
+      width: 50rem;
+      height: 15rem;
+      overflow-y: auto;
+      border-top: 0.25rem solid ${({ theme }) => theme.colors.headerColor};
+      border-right: 0.25rem solid ${({ theme }) => theme.colors.headerColor};
+      border-bottom: 0.25rem solid ${({ theme }) => theme.colors.headerColor};
+      box-shadow: 0 0.3rem 1.2rem  ${({ theme }) => theme.colors.text};
       padding: 2.5rem;
-      height: 12.5rem;
-      border-top: 0.25rem solid ${({ theme }) => theme.colors.headerColor};;
-      border-right: 0.25rem solid ${({ theme }) => theme.colors.headerColor};;
-      border-bottom: 0.25rem solid ${({ theme }) => theme.colors.headerColor};;
-  ;
-      box-shadow: 0 0.3rem 1.2rem  ${({ theme }) => theme.colors.text};;
+
+      &::-webkit-scrollbar-track {
+        border-radius: 0.6rem;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar {
+        width: 0.25rem;
+        border-radius: 1.2rem;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 1.2rem;
+        background-color: ${props => props.theme.colors.sectionBackground};
+      }
+    }
+
+    .description {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -105,6 +123,56 @@ export const Content = styled.div`
 `
 
 export const OtherInfos = styled.div`
+  display: grid;
+  grid-gap: 2rem 5rem;
+  grid-template-columns: repeat(3, 1fr);
+`
+
+export const InfosContent = styled.div`
+  border: 0.25rem solid ${({ theme }) => theme.colors.headerColor};
+  background: ${({ theme }) => theme.colors.background};
+  padding: 2rem 0rem 2rem 5rem;
+  height: fit-content;
+  max-height: 50%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0.6rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+    border-radius: 1.2rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1.2rem;
+    background-color: ${props => props.theme.colors.sectionBackground};
+  }
+
+  .infosContainerTitle {
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: ${({ theme }) => theme.weight.bold};
+  }
+
+  .infosContainerSubTitle {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.text};
+  }
+
 
 `
 
+export const Url = styled.div`
+  padding-top: 2rem;
+  word-wrap: break-word;
+
+
+  .infosContainerUrl {
+    font-size: 1rem;
+    color: ${({ theme }) => theme.colors.text};
+  }
+`
