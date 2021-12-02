@@ -10,7 +10,8 @@ declare module "styled-components" {
       headerColor: string;
       
       text: string;
-      selected: string; 
+      selected: string;
+      error: string;
     }
 
     weight: {

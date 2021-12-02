@@ -3,12 +3,13 @@ export default {
   title: "light",
 
   colors: {
-    background: '#f5f5f5',
-    text: '#000000',
-    selected: '#94d2dd',
+    background: "#F5F5F5",
+    text: "#000000",
+    selected: "#94D2DD",
 
-    sectionBackground: '#004d7c',
-    headerColor: '#BB0a1e',
+    sectionBackground: "#004D7C",
+    headerColor: "#BB0A1E",
+    error: "#DC143C"
   },
 
   weight: {

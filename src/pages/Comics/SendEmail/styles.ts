@@ -15,18 +15,18 @@ export const Content = styled.form`
   justify-content: space-between;
 
   .inputError {
-    border: 1px solid red;
+    border: 1px solid ${props => props.theme.colors.error};
     
     ::placeholder {
-      color: red;
+      color: ${props => props.theme.colors.error};
     }
   }
 
   .errorText {
-    color: red;
-    font-size: 0.8rem;
+    color: ${props => props.theme.colors.error};
+    font-size: 1.1rem;
     font-weight: ${props => props.theme.weight.bold};
-    padding-top: 1rem;
+    padding: 1rem 0rem;
   }
 `
 
@@ -34,7 +34,6 @@ export const Input = styled.input`
   width: 30rem;
   height: 3rem;
   padding: 1rem 2rem;
-  color: ${props => props.theme.colors.text};
   border-radius: 0.5rem;
   border: 1px solid ${props => props.theme.colors.sectionBackground};
   font-size: 1rem;

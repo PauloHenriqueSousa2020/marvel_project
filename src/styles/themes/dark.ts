@@ -3,12 +3,13 @@ export default {
   title: "dark",
 
   colors: {
-    background: '#333333',
-    text: '#FFFFFF',
-    selected: '#17141E',
+    background: "#333333",
+    text: "#FFFFFF",
+    selected: "#17141E",
 
-    sectionBackground: '#041E42',
-    headerColor: '#AA2961',
+    sectionBackground: "#041E42",
+    headerColor: "#AA2961",
+    error: "#DC143C"
   },
 
   weight: {

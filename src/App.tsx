@@ -7,6 +7,8 @@ import dark from "./styles/themes/dark";
 import GlobalStyled from "./styles/global";
 import Comics from "./pages/Comics/Comics";
 import Layout from "./components/Layout";
+import ToastComponent from "./components/Toast";
+
 function App() {
   const [theme, setTheme] = usePersitedState("theme", light);
 
@@ -17,6 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}> 
       <GlobalStyled />
+      <ToastComponent />
       <Layout handleSwitchTheme={handleSwitchTheme}>
         <Comics />
       </Layout>

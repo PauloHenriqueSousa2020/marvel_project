@@ -1,7 +1,9 @@
-import * as S from "./styles";
 import { useFormik } from "formik";
-
 import { ValidationSchema } from "./validation";
+
+import { ToastDisplay } from "../../../components/Toast";
+
+import * as S from "./styles";
 
 const SendEmail = () => {
   const formik = useFormik({
@@ -14,10 +16,11 @@ const SendEmail = () => {
     onSubmit: (values) => { console.log(values) },
   });
 
-
   return (
     <S.Container>
+
       <h2>Selecione os quadrinhos desejados e envie via e-mail.</h2>
+
       <S.Content onSubmit={formik.handleSubmit}>
         <S.Error>
           <S.Input
@@ -35,6 +38,7 @@ const SendEmail = () => {
             <p className="errorText">{formik.errors.name}</p>
           )}
         </S.Error>
+
         <S.Error>
           <S.Input
             type="email"
