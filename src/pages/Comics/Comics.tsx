@@ -2,12 +2,15 @@ import ContentLoad from "../../components/Loading";
 import Pagination from "../../components/Pagination";
 
 import ComicDetail from "./ComicDetail/ComicDetail";
-import * as S from "./styles";
-import { AiOutlineSearch } from "react-icons/ai";
+import SendEmail from "./SendEmail/SendEmail";
 
 import { ComicProps } from "./interface"
 
 import useComics from "./useComics";
+
+import { AiOutlineSearch } from "react-icons/ai";
+
+import * as S from "./styles";
 
 const Comics = () => {
   const {
@@ -29,7 +32,7 @@ const Comics = () => {
   } = useComics();
 
   return (
-    <S.Container>
+    <>
       <S.Content>
         <h1>Busque os quadrinhos da Marvel</h1>
         <S.Input>
@@ -84,6 +87,7 @@ const Comics = () => {
           </S.NotFound>
         )}
 
+        <SendEmail />
       </ContentLoad>
 
       {showComicDetail && (
@@ -92,7 +96,7 @@ const Comics = () => {
           setShowComicDetail={setShowComicDetail}
         />
       )}
-    </S.Container>
+    </>
   )
 };
 

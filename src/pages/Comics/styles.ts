@@ -118,7 +118,5 @@ export const Card = styled.div`
 `
 
 export const NotFound = styled.div`
-
   padding-top: 5rem;
-
 `
