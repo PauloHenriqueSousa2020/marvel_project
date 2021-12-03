@@ -1,20 +1,10 @@
-import { useFormik } from "formik";
-import { ValidationSchema } from "./validation";
-
-import { ToastDisplay } from "../../../components/Toast";
+import { useSendEmail } from "./useSendEmail";
 
 import * as S from "./styles";
 
-const SendEmail = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: ""
-    },
-    enableReinitialize: true,
-    validationSchema: ValidationSchema,
-    onSubmit: (values) => { console.log(values) },
-  });
+const SendEmail = ({ selectedComics }: any) => {
+
+  const { formik } = useSendEmail({ selectedComics });
 
   return (
     <S.Container>
@@ -33,7 +23,7 @@ const SendEmail = () => {
             }}
             className={formik.errors.name && formik.touched.name ? "inputError" : ""}
           />
-          
+
           {formik.errors.name && formik.touched.name && (
             <p className="errorText">{formik.errors.name}</p>
           )}
@@ -50,7 +40,7 @@ const SendEmail = () => {
             }}
             className={formik.errors.email && formik.touched.email ? "inputError" : ""}
           />
-          
+
           {formik.errors.email && formik.touched.email && (
             <p className="errorText">{formik.errors.email}</p>
           )}

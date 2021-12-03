@@ -16,7 +16,7 @@ export const Toast = styled(ToastContainer)`
   
   .Toastify__toast {
     width: 24rem;
-    height: 7.5rem;
+    height: 6.5rem;
     background: ${props => props.theme.colors.background};
     box-shadow: 0rem 0.3rem 0.45rem ${props => props.theme.colors.sectionBackground};
     border: 0.3rem solid ${props => props.theme.colors.background};

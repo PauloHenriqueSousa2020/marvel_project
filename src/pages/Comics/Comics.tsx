@@ -28,7 +28,8 @@ const Comics = () => {
     setShowComicDetail,
     inputValue,
     onChange,
-    handleCleanText
+    handleCleanText,
+    selectedComics
   } = useComics();
 
   return (
@@ -80,6 +81,8 @@ const Comics = () => {
                 </S.Card>
               ))}
             </S.Section>
+
+            <SendEmail selectedComics={selectedComics} />
           </>
         ) : (
           <S.NotFound>
@@ -87,7 +90,7 @@ const Comics = () => {
           </S.NotFound>
         )}
 
-        <SendEmail />
+        
       </ContentLoad>
 
       {showComicDetail && (

@@ -24,9 +24,9 @@ export const Content = styled.form`
 
   .errorText {
     color: ${props => props.theme.colors.error};
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: ${props => props.theme.weight.bold};
-    padding: 1rem 0rem;
+    padding: 0.5rem 0.5rem;
   }
 `
 

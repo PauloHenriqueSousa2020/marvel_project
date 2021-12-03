@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import ComicsService from "../../service/ComicsService/ComicsService";
 
+import { ToastDisplay } from "../../components/Toast";
+
 import { ComicProps } from "./interface"
 
 import useDebounce from "./useDebounce";
@@ -39,8 +41,8 @@ export function useComics() {
       setComics(res.data.data.results);
       setTotalPages(Math.ceil(res.data.data.total / limit))
     }).finally(() => setLoading(false))
-      .catch((error) =>
-        console.log(error)
+      .catch(() =>
+        ToastDisplay.error("Falha ao carregar, tente novamente!") 
       );
   }, [offSet, titleStartsWith]);
 
@@ -97,7 +99,8 @@ export function useComics() {
     setShowComicDetail,
     inputValue,
     onChange,
-    handleCleanText
+    handleCleanText,
+    selectedComics
   }
 };
 
