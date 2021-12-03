@@ -1,9 +1,9 @@
 import { screen } from "@testing-library/react";
-import { renderWithTheme } from "../../testUtils/renderWithTheme";
-import Comics from "./Comics";
+import { renderWithTheme } from "../../../testUtils/renderWithTheme";
+import ComicDetail from "./ComicDetail";
 
 import MockAdapter from "axios-mock-adapter";
-import api from "../../service/api";
+import api from "../../../service/api";
 
 const mockApi = new MockAdapter(api);
 
@@ -13,8 +13,6 @@ mockApi
 
 describe("ComicsPage", () => {
   test("Should render ComicsPage correctly", async() => {
-    renderWithTheme(<Comics />);
-
-    await screen.findByText("Busque os quadrinhos da Marvel");
+    renderWithTheme(<ComicDetail />);
   })
 })
