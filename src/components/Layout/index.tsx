@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Switch from "react-switch"
 
@@ -6,11 +6,11 @@ import * as S from "./styles";
 
 interface Props {
   handleSwitchTheme(): void;
-  children: any;
+  children: ReactNode;
 }
 
 const Layout = ({ children, handleSwitchTheme }: Props) => {
-  const { title, colors } = React.useContext(ThemeContext)
+  const { title, colors } = useContext(ThemeContext)
 
   return (
     <>
