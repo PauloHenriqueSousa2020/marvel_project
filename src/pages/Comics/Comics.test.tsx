@@ -117,6 +117,7 @@ describe("ComicsPage", () => {
 
     const comic = await screen.findByRole('img', { name: /marvel previews/i });
     userEvent.click(comic);
+    userEvent.click(comic);
 
     const seeDetails = await screen.findAllByText(/ver detalhes/i);
     userEvent.click(seeDetails[0]);

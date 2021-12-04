@@ -5,7 +5,7 @@ import * as S from "./styles";
 
 export const Loading = () => {
   return (
-    <S.Container data-testId="loading">
+    <S.Container>
       <img src="assets/america_captain_logo.png" alt="American Captain" />
       <span>Carregando...</span>
     </S.Container>

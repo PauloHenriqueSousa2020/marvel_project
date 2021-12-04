@@ -17,7 +17,8 @@ const Layout = ({ children, handleSwitchTheme }: Props) => {
       <S.Header>
         <p className="titleHeader">MARVEL</p>
 
-        <Switch
+        <Switch 
+          data-testid="switch"
           onChange={handleSwitchTheme}
           checked={title === "dark"}
           uncheckedIcon={false}

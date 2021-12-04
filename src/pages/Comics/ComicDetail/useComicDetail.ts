@@ -12,7 +12,7 @@ export function useComicDetail({ comicDetail }: any) {
       return writers.map((writer: any, index: number) => index === (writers.length - 1) ? `${writer.name}.` : `${writer.name}, `);
     }
 
-    return "Não informado"
+    return "Não informado."
   };
 
   const handleReturnPencillers = () => {
@@ -24,7 +24,7 @@ export function useComicDetail({ comicDetail }: any) {
       return pencillers.map((penciller: any, index: number) => index === (pencillers.length - 1) ? `${penciller.name}.` : `${penciller.name}, `);
     }
 
-    return "Não informado"
+    return "Não informado."
   };
 
   const handleReturnPencillerCovers = () => {
@@ -36,16 +36,16 @@ export function useComicDetail({ comicDetail }: any) {
       return pencillerCovers.map((pencillerCover: any, index: number) => index === (pencillerCovers.length - 1) ? `${pencillerCover.name}.` : `${pencillerCover.name}, `);
     }
 
-    return "Não informado"
+    return "Não informado."
   };
 
   const handleReturnDate = () => {
     const date = comicDetail.dates.find((date: any) => date.type === "onsaleDate")
 
     if (!!date) {
-      return moment(date.date).format("DD/MM/YYYY")
+      return `${moment(date.date).format("DD/MM/YYYY")}.`
     }
-    return "Não informado"
+    return "Não informado."
   }
 
   const url = comicDetail.urls.find((url: any) => url.type === "detail")

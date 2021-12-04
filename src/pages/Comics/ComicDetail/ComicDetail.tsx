@@ -46,11 +46,11 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: any) => {
           <S.OtherInfos>
             <div className="infosContainer">
               <p className="infosContainerTitle">Quantidade de páginas</p>
-              <p className="infosContainerSubTitle">{comicDetail?.pageCount !== 0 ? comicDetail?.pageCount : "Não informado"}</p>
+              <p className="infosContainerSubTitle">{comicDetail?.pageCount !== 0 ? comicDetail?.pageCount : "Não informado."}</p>
             </div>
             <div className="infosContainer">
               <p className="infosContainerTitle">Valor</p>
-              <p className="infosContainerSubTitle">{!!comicDetail.prices.price ? comicDetail.prices.price : "Não informado"}</p>
+              <p className="infosContainerSubTitle">{!!comicDetail.prices.price ? comicDetail.prices.price : "Não informado."}</p>
             </div>
             <div className="infosContainer">
               <p className="infosContainerTitle">Data de publicação</p>

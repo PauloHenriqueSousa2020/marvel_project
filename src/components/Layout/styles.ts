@@ -15,5 +15,6 @@ export const Header = styled.div`
   .titleHeader {
     font-size: 2rem;
     font-weight: ${props => props.theme.weight.bold};
+    color: ${props => props.theme.colors.text};
   }
   `
