@@ -1,17 +1,13 @@
 import { Container } from './styles';
 
-const MAX_ITEMS = 9;
-const CURRENT_ITEM = 1;
-const MAX_LEFT = (MAX_ITEMS - CURRENT_ITEM) / 2;
+import { PaginationProps } from "./interface"
 
-interface PaginationProps {
-  limit: number;
-  total: number;
-  offset: number;
-  setOffset: any;
-}
 
 export default function Pagination({ limit, total, offset, setOffset }: PaginationProps) {
+  const MAX_ITEMS = 9;
+  const CURRENT_ITEM = 1;
+  const MAX_LEFT = (MAX_ITEMS - CURRENT_ITEM) / 2;
+
   const currentPage = offset ? offset / limit + 1 : 1;
   const firstPage = Math.max(currentPage - MAX_LEFT, 1);
 
