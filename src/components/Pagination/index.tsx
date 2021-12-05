@@ -16,19 +16,18 @@ export default function Pagination({ limit, totalPages, offset, setOffset }: Pag
         {Array.from({ length: Math.min(MAX_ITEMS, totalPages) })
           .map((_, index) => index + firstPage)
           .map((page) => (
-            <li key={page}>
-              {page <= totalPages && (
-                <button
-                  onClick={() => setOffset((page - 1) * limit)}
-                  className={
-                    page === currentPage ? "current-page" : ""
-                  }
-                >
-                  {page}
-                </button>
-              )}
-
-            </li>
+              page <= totalPages && (
+                <li key={page}>
+                  <button
+                    onClick={() => setOffset((page - 1) * limit)}
+                    className={
+                      page === currentPage ? "current-page" : ""
+                    }
+                  >
+                    {page}
+                  </button>
+                </li>
+              )
           ))}
       </ul>
     </Container>
