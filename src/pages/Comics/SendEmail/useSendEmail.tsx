@@ -23,20 +23,21 @@ export function useSendEmail({ selectedComics }: any) {
       return ToastDisplay.info("É necessário escolher ao menos um quadrinho para enviar e-mail.");
     }
 
-    send(
-      "gmailMessage",
-      "template_7mzv00a",
-      {
-        subject: "Comics",
-        name: values.name,
-        email: values.email,
-        message: renderToStaticMarkup(<p>{selectedComics.map((selectedComic: any) => selectedComic.title)}</p>),
-      },
-      "user_wqnDKU563ImNexXowG5Q7").then(() => {
-        ToastDisplay.success("E-mail enviado com sucesso.")
-      }).catch(() =>
-        ToastDisplay.error("Houve uma falha ao enviar e-mail, tente novamente mais tarde.")
-      );
+    try {
+      send(
+        "gmailMessage",
+        "template_7mzv00a",
+        {
+          subject: "Comics",
+          name: values.name,
+          email: values.email,
+          message: renderToStaticMarkup(<p>{selectedComics.map((selectedComic: any) => selectedComic.title)}</p>),
+        },
+        "user_wqnDKU563ImNexXowG5Q7");
+      ToastDisplay.success("E-mail enviado com sucesso.")
+    } catch (error) {
+      ToastDisplay.error("Houve uma falha ao enviar e-mail, tente novamente mais tarde.")
+    }
   }
 
   return {

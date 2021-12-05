@@ -8,8 +8,6 @@ import userEvent from "@testing-library/user-event";
 
 import { RESPONSE_SELECTEDS_COMIC_MOCK } from "../../../testUtils/Mocks/comics";
 
-
-
 describe("SendEmail Page", () => {
   test("Should display formik errors correctly", async() => {
     renderWithTheme(<SendEmail selectedComics={[]} />);
@@ -61,7 +59,8 @@ describe("SendEmail Page", () => {
     });
   });
   
-  xtest("Should send email with comics correctly", async() => {
+  test("Should send email with comics correctly", async() => {
+    jest.spyOn(ToastDisplay, "success");
     renderWithTheme(<SendEmail selectedComics={RESPONSE_SELECTEDS_COMIC_MOCK} />);
 
     await act(async() => {
@@ -72,8 +71,32 @@ describe("SendEmail Page", () => {
       userEvent.type(await screen.findByPlaceholderText("Insira seu email"), "email@teste.com");
     });
 
-    await act(async() => {
+    await waitFor(async() => {
       userEvent.click(await screen.findByRole('button', { name: /enviar e-mail/i }));
     });
+
+    await waitFor(() => {
+      expect(ToastDisplay.success).toHaveBeenCalledTimes(1);
+      expect(ToastDisplay.success).toHaveBeenCalledWith("E-mail enviado com sucesso.");
+    });
   });
-})
+
+  test("Should not send email", async() => {
+    jest.spyOn(ToastDisplay, "error");
+    renderWithTheme(<SendEmail selectedComics={RESPONSE_SELECTEDS_COMIC_MOCK} />);
+
+    await act(async() => {
+      userEvent.type(await screen.findByPlaceholderText("Insira seu nome"), "Paulo");
+    });
+
+    await act(async() => {
+      userEvent.type(await screen.findByPlaceholderText("Insira seu email"), "email@teste.com");
+    });
+
+    await waitFor(async() => {
+      userEvent.click(await screen.findByRole('button', { name: /enviar e-mail/i }));
+    });
+
+
+  });
+});
