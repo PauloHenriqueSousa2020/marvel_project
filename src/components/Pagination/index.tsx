@@ -1,9 +1,8 @@
-import { Container } from './styles';
+import { Container } from "./styles";
 
-import { PaginationProps } from "./interface"
+import { PaginationProps } from "./interface";
 
-
-export default function Pagination({ limit, total, offset, setOffset }: PaginationProps) {
+export default function Pagination({ limit, totalPages, offset, setOffset }: PaginationProps) {
   const MAX_ITEMS = 9;
   const CURRENT_ITEM = 1;
   const MAX_LEFT = (MAX_ITEMS - CURRENT_ITEM) / 2;
@@ -14,18 +13,21 @@ export default function Pagination({ limit, total, offset, setOffset }: Paginati
   return (
     <Container>
       <ul>
-        {Array.from({ length: Math.min(MAX_ITEMS, total) })
+        {Array.from({ length: Math.min(MAX_ITEMS, totalPages) })
           .map((_, index) => index + firstPage)
           .map((page) => (
             <li key={page}>
-              <button
-                onClick={() => setOffset((page - 1) * limit)}
-                className={
-                  page === currentPage ? 'current-page' : ''
-                }
-              >
-                {page}
-              </button>
+              {page <= totalPages && (
+                <button
+                  onClick={() => setOffset((page - 1) * limit)}
+                  className={
+                    page === currentPage ? "current-page" : ""
+                  }
+                >
+                  {page}
+                </button>
+              )}
+
             </li>
           ))}
       </ul>

@@ -4,7 +4,7 @@ type SetCurrentTab = Dispatch<SetStateAction<number>> | any;
 
 export interface PaginationProps {
   limit: number;
-  total: number;
+  totalPages: number;
   offset: number;
   setOffset: SetCurrentTab;
 }

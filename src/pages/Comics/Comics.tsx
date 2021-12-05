@@ -61,7 +61,7 @@ const Comics = () => {
                 limit={limit}
                 offset={offSet}
                 setOffset={setOffSet}
-                total={totalPages}
+                totalPages={totalPages}
               />
             )}
             <S.Section>
