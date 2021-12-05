@@ -90,7 +90,7 @@ const Comics = () => {
           </S.NotFound>
         )}
 
-        
+
       </ContentLoad>
 
       {showComicDetail && (

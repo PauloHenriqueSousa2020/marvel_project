@@ -60,7 +60,7 @@ export const Section = styled.div`
   .selected {
     background: ${props => props.theme.colors.headerColor};
     transform: scale(1.1);
-    transition: transform 0.8s ease 0s; 
+    transition: transform 0.8s ease 0s;
 
     .cardInfo {
       background: ${props => props.theme.colors.selected};
@@ -75,6 +75,10 @@ export const Card = styled.div`
   background: ${props => props.theme.colors.background};
   position: relative;
   cursor: pointer;
+
+  :hover {
+    opacity: 0.8;
+  }
 
   .cardInfo {
     width: 15rem;
@@ -101,7 +105,7 @@ export const Card = styled.div`
       z-index: 10;
       font-size: 1rem;
       padding: 0.2rem;
-      cursor: url('http://www.rw-designer.com/cursor-extern.php?id=142520'), default;
+      cursor: pointer;
 
       svg {
         margin-left: 0.5rem;

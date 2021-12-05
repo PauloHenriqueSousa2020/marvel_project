@@ -30,7 +30,6 @@ export const Close = styled.div`
   .comicTitle {
     font-size: 1rem;
     font-weight: ${({ theme }) => theme.weight.bold};
-
   }
 
   .closeButton {
@@ -39,7 +38,7 @@ export const Close = styled.div`
     align-items: center;
     gap: 0 1rem;
     background-color: transparent;
-    cursor: pointer;
+    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=142520'), default;
     font-size: 1rem;
     font-weight: ${({ theme }) => theme.weight.bold};
     color: ${({ theme }) => theme.colors.text};

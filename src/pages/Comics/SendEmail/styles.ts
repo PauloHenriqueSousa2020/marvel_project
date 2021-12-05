@@ -55,4 +55,12 @@ export const Button = styled.button`
   background: ${props => props.theme.colors.headerColor};
   font-size: 1rem;
   font-weight: ${props => props.theme.weight.bold};
+
+  &:hover {
+
+    background: ${props => props.theme.colors.sectionBackground};
+    transition: transform 0.8s ease 0s;
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
 `
