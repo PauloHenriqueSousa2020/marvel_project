@@ -1,5 +1,6 @@
 {
-  "name": "front_marvel",
+  "name": "marvel_project",
+  "homepage": "https://paulohenriquesousa2020.github.io/marvel_project/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,9 +31,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-coverage": "react-scripts test src/ --coverage",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test src/ --coverage",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -61,6 +63,7 @@
   },
   "devDependencies": {
     "@types/md5": "^2.3.1",
-    "@types/styled-components": "^5.1.15"
+    "@types/styled-components": "^5.1.15",
+    "gh-pages": "^3.2.3"
   }
 }
