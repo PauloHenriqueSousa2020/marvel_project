@@ -15,9 +15,11 @@ export function useComics() {
   const [comics, setComics] = useState([]);
   const [totalPages, setTotalPages] = useState<number>();
 
-  const [comicDetail, setComicDetail] = useState({});
+  const [comicDetail, setComicDetail] = useState<ComicProps>();
   const [showComicDetail, setShowComicDetail] = useState(false);
+
   const [selectedComics, setSelectedComics] = useState<any>([]);
+
   const [titleStartsWith, setTitleStartsWith] = useState<string>();
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -55,16 +57,17 @@ export function useComics() {
     setShowComicDetail(true);
   };
 
-  const handleSelectedComics = (comics: any) => {
-    if (!selectedComics.find((selected: any) => selected.id === comics.id)) {
+  const handleSelectedComics = (comics: ComicProps) => {
+    console.log(comics)
+    if (!selectedComics.find((selected: ComicProps) => selected.id === comics.id)) {
       setSelectedComics((selected: any) => [...selected, comics]);
     } else {
-      setSelectedComics(selectedComics.filter((selected: any) => selected.id !== comics.id));
+      setSelectedComics(selectedComics.filter((selected: ComicProps) => selected.id !== comics.id));
     }
   };
 
   const handleClassNameActives = (id: number) => {
-    return selectedComics.find((selecteds: any) => selecteds.id === id) && "selected";
+    return selectedComics.find((selecteds: ComicProps) => selecteds.id === id) && "selected";
   };
 
   const onChange = (value: string) => {

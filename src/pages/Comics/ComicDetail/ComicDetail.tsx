@@ -4,14 +4,16 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import { useComicDetail } from "./useComicDetail";
 
-const ComicDetail = ({ comicDetail, setShowComicDetail }: any) => {
+import { ComicDetailsProps } from "./interface";
+
+const ComicDetail = ({ comicDetail, setShowComicDetail }: ComicDetailsProps) => {
   const {
     handleReturnWriter,
     handleReturnPencillers,
     handleReturnPencillerCovers,
     handleReturnDate,
-    url
-   } = useComicDetail({ comicDetail });
+    handleReturnUrl,
+  } = useComicDetail({ comicDetail });
 
   return (
     <S.Modal>
@@ -74,8 +76,8 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: any) => {
 
           <S.Url>
             <p className="infosContainerTitle">Acesse mais informações no link abaixo:</p>
-            <a className="infosContainerUrl" target="_blank" href={url.url} rel="noreferrer">
-              {url.url}
+            <a className="infosContainerUrl" target="_blank" href={handleReturnUrl()} rel="noreferrer">
+              {handleReturnUrl()}
             </a>
           </S.Url>
         </S.InfosContent>
