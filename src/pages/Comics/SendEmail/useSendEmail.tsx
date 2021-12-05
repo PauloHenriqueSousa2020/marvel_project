@@ -1,9 +1,10 @@
+import EmailTemplate from "../../../components/EmailTemplate";
+import { ToastDisplay } from "../../../components/Toast";
+
 import { useFormik } from "formik";
 import { ValidationSchema } from "./validation";
 
 import { renderToStaticMarkup } from "react-dom/server"
-
-import { ToastDisplay } from "../../../components/Toast";
 
 import { send } from "emailjs-com";
 
@@ -31,7 +32,7 @@ export function useSendEmail({ selectedComics }: any) {
           subject: "Comics",
           name: values.name,
           email: values.email,
-          message: renderToStaticMarkup(<p>{selectedComics.map((selectedComic: any) => selectedComic.title)}</p>),
+          message: renderToStaticMarkup(<EmailTemplate selecteds={selectedComics} />),
         },
         "user_wqnDKU563ImNexXowG5Q7");
       ToastDisplay.success("E-mail enviado com sucesso.")
