@@ -1,24 +1,24 @@
 import moment from "moment"
 
-import { ItemsPros, DateProps, UrlsProps, PricesProps } from "./interface";
+import { ItemsPros, DateProps, UrlsProps, PricesProps, ComicsInfoProps } from "./interface";
 
 const EmailTemplate = ({ selecteds }: any) => {
 
-  const handleReturnPrice = () => {
-    const price = selecteds.prices.filter(
+  const handleReturnPrice = (selected: ComicsInfoProps) => {
+    const price = selected.prices.filter(
       (price: PricesProps) =>
         price.type === "printPrice"
     );
 
     if (price.length > 0) {
-      return price.map((price: PricesProps) => price.price > 0 ? `$ ${price.price}` : "Não informado.")
+      return price.map((price: PricesProps) => price.price > 0 && `$ ${price.price}`);
     }
 
     return "Não informado."
   };
 
-  const handleReturnWriter = () => {
-    const writers = selecteds.creators.items.filter(
+  const handleReturnWriter = (selected: ComicsInfoProps) => {
+    const writers = selected.creators.items.filter(
       (writer: ItemsPros) =>
         writer.role === "writer"
     );
@@ -30,8 +30,8 @@ const EmailTemplate = ({ selecteds }: any) => {
     return "Não informado."
   };
 
-  const handleReturnPencillers = () => {
-    const pencillers = selecteds.creators.items.filter(
+  const handleReturnPencillers = (selected: ComicsInfoProps) => {
+    const pencillers = selected.creators.items.filter(
       (penciller: ItemsPros) => penciller.role === "penciller"
     );
 
@@ -42,8 +42,8 @@ const EmailTemplate = ({ selecteds }: any) => {
     return "Não informado."
   };
 
-  const handleReturnPencillerCovers = () => {
-    const pencillerCovers = selecteds.creators.items.filter(
+  const handleReturnPencillerCovers = (selected: ComicsInfoProps) => {
+    const pencillerCovers = selected.creators.items.filter(
       (pencillerCover: ItemsPros) => pencillerCover.role === "penciller (cover)"
     );
 
@@ -54,8 +54,8 @@ const EmailTemplate = ({ selecteds }: any) => {
     return "Não informado."
   };
 
-  const handleReturnDate = () => {
-    const date = selecteds.dates.find((date: DateProps) => date.type === "onsaleDate")
+  const handleReturnDate = (selected: ComicsInfoProps) => {
+    const date = selected.dates.find((date: DateProps) => date.type === "onsaleDate")
 
     if (!!date) {
       return `${moment(date.date).format("DD/MM/YYYY")}.`
@@ -63,8 +63,8 @@ const EmailTemplate = ({ selecteds }: any) => {
     return "Não informado."
   };
 
-  const handleReturnUrl = () => {
-    const url = selecteds.urls.find((url: UrlsProps) => url.type === "detail")
+  const handleReturnUrl = (selected: ComicsInfoProps) => {
+    const url = selected.urls.find((url: UrlsProps) => url.type === "detail")
 
     if (!!url) {
       return url.url
@@ -81,6 +81,7 @@ const EmailTemplate = ({ selecteds }: any) => {
           border: "0.6rem solid #BB0A1E",
           borderRadius: "2rem",
           padding: "2rem",
+          marginTop: "1.2rem"
         }} key={index}>
           <div style={{
             display: "flex",
@@ -90,8 +91,6 @@ const EmailTemplate = ({ selecteds }: any) => {
           }}>
             <div style={{
               border: "0.25rem solid #BB0A1E",
-              height: "18rem",
-              boxShadow: "0 0.5rem 1.4rem #BB0A1E",
             }}>
               <img style={{
                 height: "100%",
@@ -100,14 +99,12 @@ const EmailTemplate = ({ selecteds }: any) => {
 
             <div style={{
               position: "relative",
-              background: "#FFF",
+              background: "#F5F5F5",
+              border: "0.25rem solid #BB0A1E",
             }}>
               <div style={{
                 display: "inline-flex",
                 position: "absolute",
-                left: "-1.5rem",
-                top: "-1.2rem",
-                boxShadow: "0 0.5rem 1.4rem #BB0A1E",
               }}>
                 <h2 style={{
                   padding: "0.5rem 0.8rem",
@@ -116,14 +113,18 @@ const EmailTemplate = ({ selecteds }: any) => {
                   fontSize: "1rem",
                 }}>{selected.title}</h2>
               </div>
-
               <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "1rem",
+                width: "50rem",
+                padding: "2.5rem",
               }}>
-                <p>{selected.description ? selected.description : 'Nenhuma descrição detalhada sobre esse quadrinho.'}</p>
+                <div style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: "1rem",
+                }}>
+                  <p>{selected.description ? selected.description : 'Nenhuma descrição detalhada sobre esse quadrinho.'}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -134,80 +135,90 @@ const EmailTemplate = ({ selecteds }: any) => {
             padding: "2rem 0rem 2rem 5rem",
           }}>
             <div style={{
-              display: "grid",
-              gridGap: "2rem 5rem",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              display: "flex",
             }}>
-              <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Quantidade de páginas</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>{selected?.pageCount !== 0 ? selected?.pageCount : "Não informado."}</p>
+              <div style={{
+                marginRight: "20rem"
+              }}>
+                <div>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Quantidade de páginas</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{selected?.pageCount !== 0 ? selected?.pageCount : "Não informado."}</p>
+                </div>
+                <div>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Valor</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{handleReturnPrice(selected)}</p>
+                </div>
+                <div>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Data de publicação</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{handleReturnDate(selected)}</p>
+                </div>
               </div>
               <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Valor</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>{handleReturnPrice()}</p>
-              </div>
-              <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Data de publicação</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>{handleReturnDate()}</p>
-              </div>
-              <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Escritores</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>{handleReturnWriter()}</p>
-              </div>
-              <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Artistas</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>"{handleReturnPencillers()}"</p>
-              </div>
-              <div>
-                <p style={{
-                  fontSize: "1.2rem",
-                  color: "#000000",
-                  fontWeight: 700,
-                }}>Artistas  da Capa</p>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "#000000",
-                }}>{handleReturnPencillerCovers()}</p>
+                <div style={{
+                  width: "20rem",
+                }}>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Escritores</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{handleReturnWriter(selected)}</p>
+                </div>
+                <div style={{
+                  width: "20rem",
+                }}>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Artistas</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{handleReturnPencillers(selected)}</p>
+                </div>
+                <div style={{
+                  width: "20rem",
+                }}>
+                  <p style={{
+                    fontSize: "1.2rem",
+                    color: "#000000",
+                    fontWeight: 700,
+                  }}>Artistas  da Capa</p>
+                  <p style={{
+                    fontSize: "1rem",
+                    color: "#000000",
+                  }}>{handleReturnPencillerCovers(selected)}</p>
+                </div>
               </div>
             </div>
 
 
-            {(!!handleReturnUrl()) && (
+            {(!!handleReturnUrl(selected)) && (
               <div style={{
                 paddingTop: "2rem",
                 wordWrap: "break-word",
@@ -220,8 +231,8 @@ const EmailTemplate = ({ selecteds }: any) => {
                 <a style={{
                   fontSize: "1rem",
                   color: "#000000",
-                }} target="_blank" href={handleReturnUrl()} rel="noreferrer">
-                  {handleReturnUrl()}
+                }} target="_blank" href={handleReturnUrl(selected)} rel="noreferrer">
+                  {handleReturnUrl(selected)}
                 </a>
               </div>
             )}

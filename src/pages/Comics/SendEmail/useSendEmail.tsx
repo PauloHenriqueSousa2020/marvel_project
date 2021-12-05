@@ -37,7 +37,7 @@ export function useSendEmail({ selectedComics }: any) {
         "user_wqnDKU563ImNexXowG5Q7");
       ToastDisplay.success("E-mail enviado com sucesso.")
     } catch (error) {
-      ToastDisplay.error("Houve uma falha ao enviar e-mail, tente novamente mais tarde.")
+      ToastDisplay.error("Houve uma falha ao enviar e-mail, tente novamente.")
     }
   }
 

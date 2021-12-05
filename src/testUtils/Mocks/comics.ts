@@ -270,13 +270,28 @@ export const RESPONSE_COMIC_WITH_DETAIL_MOCK = {
         role: "penciller (cover)"
       },
       {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/576",
+        name: "Jon 2",
+        role: "penciller (cover)"
+      },
+      {
         resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
         name: "Daniel Way",
         role: "writer"
       },
       {
         resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Daniel 2",
+        role: "writer"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
         name: "Paul Alison",
+        role: "penciller"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Paul 2",
         role: "penciller"
       }
     ],
@@ -326,13 +341,28 @@ export const RESPONSE_SELECTEDS_COMIC_MOCK = [{
         role: "penciller (cover)"
       },
       {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/576",
+        name: "Jon Proctor 2",
+        role: "penciller (cover)"
+      },
+      {
         resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
         name: "Daniel Way",
         role: "writer"
       },
       {
         resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Daniel Way 2",
+        role: "writer"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
         name: "Paul Alison",
+        role: "penciller"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Paul Alison 2",
         role: "penciller"
       }
     ],

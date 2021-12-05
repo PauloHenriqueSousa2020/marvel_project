@@ -1,14 +1,13 @@
-import ComicDetail from "./ComicDetail";
+import EmailTemplate from "./";
 
 import { screen } from "@testing-library/react";
-import { renderWithTheme } from "../../../testUtils/renderWithTheme";
+import { renderWithTheme } from "../../testUtils/renderWithTheme";
 
-import { RESPONSE_COMIC_WITH_DETAIL_MOCK, RESPONSE_COMIC_WITHOUT_DETAIL_MOCK } from "../../../testUtils/Mocks/comics";
+import { RESPONSE_COMIC_WITH_DETAIL_MOCK, RESPONSE_COMIC_WITHOUT_DETAIL_MOCK } from "../../testUtils/Mocks/comics";
 
-describe("ComicsDetail Page", () => {
-  test("Should render ComicsDetail with details correctly", async() => {
-    const setShowComicDetail = jest.fn();
-    renderWithTheme(<ComicDetail comicDetail={RESPONSE_COMIC_WITH_DETAIL_MOCK} setShowComicDetail={setShowComicDetail} />);
+describe("EmailTemplate Page", () => {
+  test("Should render EmailTemplate with details correctly", async() => {
+    renderWithTheme(<EmailTemplate selecteds={[RESPONSE_COMIC_WITH_DETAIL_MOCK]}  />);
 
     await screen.findByRole('img', { name: /gun theory/i })
     await screen.findByRole('heading', { name: /gun theory/i });
@@ -24,10 +23,9 @@ describe("ComicsDetail Page", () => {
     });
   });
 
-  test("Should render ComicsDetail without details correctly", async() => {
-    const setShowComicDetail = jest.fn();
-    renderWithTheme(<ComicDetail comicDetail={RESPONSE_COMIC_WITHOUT_DETAIL_MOCK} setShowComicDetail={setShowComicDetail} />);
-
+  test("Should render EmailTemplate without details correctly", async() => {
+    renderWithTheme(<EmailTemplate selecteds={[RESPONSE_COMIC_WITHOUT_DETAIL_MOCK]}  />);
+  
     await screen.findByRole('img', { name: /gun theory/i })
     await screen.findByRole('heading', { name: /gun theory/i });
     await screen.findByText(/nenhuma descrição detalhada sobre esse quadrinho\./i);

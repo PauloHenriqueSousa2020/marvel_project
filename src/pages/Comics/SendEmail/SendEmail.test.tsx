@@ -8,7 +8,6 @@ import userEvent from "@testing-library/user-event";
 
 import { RESPONSE_SELECTEDS_COMIC_MOCK } from "../../../testUtils/Mocks/comics";
 
-import axios from "axios";
 describe("SendEmail Page", () => {
   test("Should display formik errors correctly", async() => {
     renderWithTheme(<SendEmail selectedComics={[]} />);
@@ -82,9 +81,9 @@ describe("SendEmail Page", () => {
     });
   });
 
-  xtest("Should not send email", async() => {
+  test("Should not send email", async() => {
     jest.spyOn(ToastDisplay, "error");
-    renderWithTheme(<SendEmail selectedComics={RESPONSE_SELECTEDS_COMIC_MOCK} />);
+    renderWithTheme(<SendEmail selectedComics={{}} />);
 
     await act(async() => {
       userEvent.type(await screen.findByPlaceholderText("Insira seu nome"), "Paulo");
@@ -98,8 +97,9 @@ describe("SendEmail Page", () => {
       userEvent.click(await screen.findByRole('button', { name: /enviar e-mail/i }));
     });
 
-    
-
-
+    await waitFor(() => {
+      expect(ToastDisplay.error).toHaveBeenCalledTimes(1);
+      expect(ToastDisplay.error).toHaveBeenCalledWith("Houve uma falha ao enviar e-mail, tente novamente.");
+    });
   });
 });
