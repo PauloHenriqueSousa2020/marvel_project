@@ -9,6 +9,7 @@ import Layout from "./";
 describe("Layout Component", () => {
   test("Should render Layout and change theme correctly", async () => {
     const handleSwitchTheme = jest.fn();
+
     renderWithTheme(<Layout handleSwitchTheme={handleSwitchTheme} children={<></>} />);
     
     await screen.findByText(/marvel/i)

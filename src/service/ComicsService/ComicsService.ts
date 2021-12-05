@@ -3,7 +3,16 @@ import api from "../api";
 
 const service = "/comics";
 
-const findAll = (params = {}) => {
+interface ParamsProps {
+  ts: string,
+  hash: string,
+  apikey: string,
+  limit: number,
+  offset: number,
+  titleStartsWith?: string,
+};
+
+const findAll = (params: ParamsProps) => {
   return api.get(`${service}`, { params });
 };
 
