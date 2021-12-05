@@ -3,9 +3,8 @@ import { useSendEmail } from "./useSendEmail";
 import * as S from "./styles";
 
 const SendEmail = ({ selectedComics }: any) => {
-
   const { formik } = useSendEmail({ selectedComics });
-
+  
   return (
     <S.Container>
 

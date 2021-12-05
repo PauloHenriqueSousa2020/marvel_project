@@ -32,7 +32,7 @@ const renderComponent = async ({ isEmptyResponse }: RenderComponentParams) => {
   });
 };
 
-describe("ComicsPage", () => {
+describe("Comics Page", () => {
   test("Should render ComicsPage with data", async () => {
     await renderComponent({ isEmptyResponse: false })
 

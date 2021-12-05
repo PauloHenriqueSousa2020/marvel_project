@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 import App from "./App";
 
-describe("ComicsPage", () => {
+describe("App Page", () => {
   test("Should render App correctly", async () => {
     renderWithTheme(<App />);
 
