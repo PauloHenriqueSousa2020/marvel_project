@@ -1,9 +1,22 @@
 import moment from "moment"
 
-import { useComicDetailProps, ItemsPros, DateProps, UrlsProps } from "./interface";
+import { useComicDetailProps, ItemsPros, DateProps, UrlsProps, PricesProps } from "./interface";
 
 export function useComicDetail({ comicDetail }: useComicDetailProps) {
 
+
+  const handleReturnPrice = () => {
+    const price = comicDetail.prices.filter(
+      (price: PricesProps) =>
+        price.type === "printPrice"
+    );
+
+    if(price.length > 0){ 
+      return price.map((price: PricesProps) => price.price > 0 ? `$ ${price.price}` : "Não informado.")
+    }
+
+    return "Não informado."
+  }
   const handleReturnWriter = () => {
     const writers = comicDetail.creators.items.filter(
       (writer: ItemsPros) =>
@@ -63,7 +76,8 @@ export function useComicDetail({ comicDetail }: useComicDetailProps) {
     handleReturnPencillers,
     handleReturnPencillerCovers,
     handleReturnDate,
-    handleReturnUrl
+    handleReturnUrl,
+    handleReturnPrice
   }
 };
 

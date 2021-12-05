@@ -208,3 +208,78 @@ export const SEARCH_COMICS_MOCK = {
     ]
   },
 }
+
+export const RESPONDE_COMIC_WITHOUT_DETAIL_MOCK = {
+  id: 384,
+  title: "Gun Theory",
+  description: "",
+  pageCount: 0,
+  urls: [],
+  dates: [],
+  prices: [],
+  thumbnail: {
+    path: "http://i.annihil.us/u/prod/marvel/i/mg/c/60/4bc69f11baf75",
+    extension: "jpg"
+  },
+  creators: {
+    available: 0,
+    collectionURI: "http://gateway.marvel.com/v1/public/comics/384/creators",
+    items: [],
+    returned: 0
+  },
+}
+
+export const RESPONDE_COMIC_WITH_DETAIL_MOCK = {
+  id: 384,
+  title: "Gun Theory",
+  description: "Gun Description",
+  pageCount: 47,
+  urls: [
+    {
+      type: "detail",
+      url: "http://marvel.com/comics/issue/384/gun_theory_2003_3?utm_campaign=apiRef&utm_source=aa5a981963fa6f57eeb88dc2be8fc61b"
+    }
+  ],
+  dates: [
+    {
+      type: "onsaleDate",
+      date: "2029-12-31T00:00:00-0500"
+    },
+    {
+      type: "focDate",
+      date: "-0001-11-30T00:00:00-0500"
+    }
+  ],
+  prices: [
+    {
+      type: "printPrice",
+      price: "200"
+    }
+  ],
+  thumbnail: {
+    path: "http://i.annihil.us/u/prod/marvel/i/mg/c/60/4bc69f11baf75",
+    extension: "jpg"
+  },
+  creators: {
+    available: 2,
+    collectionURI: "http://gateway.marvel.com/v1/public/comics/384/creators",
+    items: [
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/576",
+        name: "Jon Proctor",
+        role: "penciller (cover)"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Daniel Way",
+        role: "writer"
+      },
+      {
+        resourceURI: "http://gateway.marvel.com/v1/public/creators/344",
+        name: "Paul Alison",
+        role: "penciller"
+      }
+    ],
+    returned: 2
+  },
+}

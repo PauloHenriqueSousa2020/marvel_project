@@ -14,7 +14,7 @@ export interface ComicsInfoProps {
   thumbnail: ThumbnailProps,
   pageCount: number,
   description: string,
-  prices: PricesProps,
+  prices: [PricesProps],
   creators: CreatorsProps,
   dates: [DateProps],
   urls: [UrlsProps],

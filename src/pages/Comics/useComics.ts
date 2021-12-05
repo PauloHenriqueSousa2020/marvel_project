@@ -58,7 +58,6 @@ export function useComics() {
   };
 
   const handleSelectedComics = (comics: ComicProps) => {
-    console.log(comics)
     if (!selectedComics.find((selected: ComicProps) => selected.id === comics.id)) {
       setSelectedComics((selected: any) => [...selected, comics]);
     } else {

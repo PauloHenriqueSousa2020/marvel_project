@@ -13,6 +13,7 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: ComicDetailsProps) => 
     handleReturnPencillerCovers,
     handleReturnDate,
     handleReturnUrl,
+    handleReturnPrice
   } = useComicDetail({ comicDetail });
 
   return (
@@ -29,7 +30,7 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: ComicDetailsProps) => 
 
         <S.Content>
           <div className="blockImage">
-            <img src={`${comicDetail.thumbnail.path}/standard_fantastic.${comicDetail.thumbnail.extension}`} alt="3-D Man" />
+            <img src={`${comicDetail.thumbnail.path}/standard_fantastic.${comicDetail.thumbnail.extension}`} alt={comicDetail.title} />
           </div>
 
           <div className="infosContainer">
@@ -52,7 +53,7 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: ComicDetailsProps) => 
             </div>
             <div className="infosContainer">
               <p className="infosContainerTitle">Valor</p>
-              <p className="infosContainerSubTitle">{!!comicDetail.prices.price ? comicDetail.prices.price : "Não informado."}</p>
+              <p className="infosContainerSubTitle">{handleReturnPrice()}</p>
             </div>
             <div className="infosContainer">
               <p className="infosContainerTitle">Data de publicação</p>
@@ -70,16 +71,18 @@ const ComicDetail = ({ comicDetail, setShowComicDetail }: ComicDetailsProps) => 
               <p className="infosContainerTitle">Artistas  da Capa</p>
               <p className="infosContainerSubTitle">{handleReturnPencillerCovers()}</p>
             </div>
-
-
           </S.OtherInfos>
 
-          <S.Url>
-            <p className="infosContainerTitle">Acesse mais informações no link abaixo:</p>
-            <a className="infosContainerUrl" target="_blank" href={handleReturnUrl()} rel="noreferrer">
-              {handleReturnUrl()}
-            </a>
-          </S.Url>
+
+          {(!!handleReturnUrl()) && (
+            <S.Url>
+              <p className="infosContainerTitle">Acesse mais informações no link abaixo:</p>
+              <a className="infosContainerUrl" target="_blank" href={handleReturnUrl()} rel="noreferrer">
+                {handleReturnUrl()}
+              </a>
+            </S.Url>
+          )}
+
         </S.InfosContent>
       </S.Container>
     </S.Modal>
