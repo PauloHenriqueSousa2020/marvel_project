@@ -26,15 +26,15 @@ export function useSendEmail({ selectedComics }: any) {
 
     try {
       send(
-        "gmailMessage",
-        "template_7mzv00a",
+        process.env.REACT_APP_EMAIL_SERVICE as string,
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID as string,
         {
           subject: "Comics",
           name: values.name,
           email: values.email,
           message: renderToStaticMarkup(<EmailTemplate selecteds={selectedComics} />),
         },
-        "user_wqnDKU563ImNexXowG5Q7");
+        process.env.REACT_APP_EMAIL_USER_ID as string);
       ToastDisplay.success("E-mail enviado com sucesso.")
     } catch (error) {
       ToastDisplay.error("Houve uma falha ao enviar e-mail, tente novamente.")
