@@ -22,7 +22,7 @@ describe("App Page", () => {
     });
 
     userEvent.click(await screen.findByTestId("switch"));
-    
+
     expect(await screen.findByText("MARVEL")).toHaveStyle({
       color: "#FFFFFF"
     });
@@ -33,7 +33,5 @@ describe("App Page", () => {
   test("Should render App without localStorage set correctly", async () => {
     localStorage.clear();
     renderWithTheme(<App />);
-
-
   });
 })
