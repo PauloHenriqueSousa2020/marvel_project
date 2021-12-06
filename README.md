@@ -1,7 +1,7 @@
 # MARVEL PROJECT
 
 <h2 align="center"> Aplicação desenvolvida em React utlizando a base de dados da <a href="https://developer.marvel.com" target="_blank" rel="noreferrer"> Marvel API </a> </h2>
-[Marvel API](https://developer.marvel.com){:target="_blank"}
+
 <h3> Principais recursos utlizadas : </h3>
 
 <ul>
@@ -26,5 +26,6 @@ Inicia o projeto em desenvolvimento. Acessar via http://localhost:3000 para visu
 
 Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar o arquivo de coverage ir no diretório coverage\lcov-report\index.html e abrir no navegador ou acessar pela extensão Live server do Visual Studio Code. 
 
+#### Aplicação responsiva para resoluções 1366x768 acima
 
-#### `Aplicação responsiva para resoluções 1366x768 acima`
+#### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
