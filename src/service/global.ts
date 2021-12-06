@@ -1,13 +1,13 @@
 import md5 from "md5";
 
 const ts = Number(new Date());
-const privateKey = process.env.REACT_APP_PRIVATE_KEY as string
-const apikey = "aa5a981963fa6f57eeb88dc2be8fc61b"
+const privateKey: any = process.env.REACT_APP_PRIVATE_KEY 
+const apikey: any = process.env.REACT_APP_API_KEY 
 
 const hash = md5(ts + privateKey + apikey);
 
-console.log("privateKey: ", privateKey)
-console.log("apikey: ", apikey)
+console.log("privateKey, privateKey, privateKey: ", privateKey)
+console.log("apikey, apikey, apikey: ", apikey)
 const params = {
   ts,
   hash,
