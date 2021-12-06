@@ -2,6 +2,8 @@ import { ReactNode, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Switch from "react-switch"
 
+import { CgSun, CgMoon } from "react-icons/cg";
+
 import * as S from "./styles";
 
 interface Props {
@@ -17,14 +19,35 @@ const Layout = ({ children, handleSwitchTheme }: Props) => {
       <S.Header>
         <p className="titleHeader">MARVEL</p>
 
-        <Switch 
+        <Switch
+          className="react-switch"
           data-testid="switch"
           onChange={handleSwitchTheme}
           checked={title === "dark"}
-          uncheckedIcon={false}
-          checkedIcon={false}
-          height={20}
-          width={48}
+          uncheckedIcon={<div
+            style={{
+              display: "flex",
+              marginLeft: "15px",
+              alignItems: "center",
+              height: "100%",
+            }}
+          >
+            <CgMoon size={22} />
+          </div>}
+          checkedIcon={
+            <div
+              style={{
+                display: "flex",
+                marginLeft: "10px",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              <CgSun size={22} />
+            </div>
+          }
+          height={40}
+          width={88}
           onColor={colors.sectionBackground}
           offColor={colors.sectionBackground}
         />
