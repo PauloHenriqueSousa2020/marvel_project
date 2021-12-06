@@ -15,12 +15,38 @@ export const Modal = styled.div`
 `
 
 export const Container = styled.div`
-  width: 70vw;
+  width: 75vw;
   height: 85%;
   background: ${({ theme }) => theme.colors.sectionBackground};
   border: 0.6rem solid ${({ theme }) => theme.colors.headerColor};
   border-radius: 2rem;
   padding: 2rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 85vw;
+    height: 70%;
+  }
+
+  @media (min-width: 1366px) and (max-width: 1520px) {
+    width: 85vw;
+    height: 70%;
+  }
+
+  @media (min-width: 1520px) and (max-width: 1920px) {
+    width: 75vw;  
+    height: 70%;
+  }
+
+  @media (min-width: 1920px) and (max-width: 2280px) {
+    width: 65vw;  
+    height: 70%;
+  }
+
+  @media (min-width: 2280px) {
+    width: 55vw;
+    height: 70%;
+  }
+
 `;
 
 export const Close = styled.div`

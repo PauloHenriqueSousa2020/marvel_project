@@ -57,6 +57,22 @@ export const Section = styled.div`
   justify-content: center;
   border-radius: 1rem;
 
+  @media screen and (max-width: 1366px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1366px) and (max-width: 1520px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1920px) and (max-width: 2280px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (min-width: 2280px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
   .selected {
     background: ${props => props.theme.colors.headerColor};
     transform: scale(1.1);
