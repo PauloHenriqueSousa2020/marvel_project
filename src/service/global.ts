@@ -6,6 +6,8 @@ const apikey = "aa5a981963fa6f57eeb88dc2be8fc61b"
 
 const hash = md5(ts + privateKey + apikey);
 
+console.log("privateKey: ", privateKey)
+console.log("apikey: ", apikey)
 const params = {
   ts,
   hash,
