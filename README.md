@@ -1,7 +1,7 @@
 # MARVEL PROJECT
 
 <h2 align="center"> Aplicação desenvolvida em React utlizando a base de dados da <a href="https://developer.marvel.com" target="_blank" rel="noreferrer"> Marvel API </a> </h2>
-
+[Marvel API](https://developer.marvel.com){:target="_blank"}
 <h3> Principais recursos utlizadas : </h3>
 
 <ul>
