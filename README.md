@@ -1,6 +1,6 @@
 # MARVEL PROJECT
 
-<h2 align="center"> Aplicação desenvolvida em React </h2>
+<h2 align="center"> Aplicação desenvolvida em React utlizando a base de dados da <a href="https://developer.marvel.com" target="_blank"> Marvel API </a> </h2>
 
 <h3> Principais recursos utlizadas : </h3>
 
