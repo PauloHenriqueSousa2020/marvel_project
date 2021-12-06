@@ -35,7 +35,7 @@ const Comics = () => {
   return (
     <>
       <S.Content>
-        <h1>Busque os quadrinhos da Marvel</h1>
+        <h1>Busque quadrinhos da Marvel</h1>
         <S.Input>
           <AiOutlineSearch size={30} fill={"#000"} />
           <input
