@@ -1,44 +1,31 @@
 # MARVEL PROJECT
 
-## Available Scripts
+<h2 align="center"> Aplicação desenvolvida em React utlizando a base de dados da <a href="https://developer.marvel.com" target="_blank" rel="noreferrer"> Marvel API </a> </h2>
 
-In the project directory, you can run:
+<h3> Principais recursos utlizadas : </h3>
+
+<ul>
+  <li> <a href="https://styled-components.com" target="_blank"> Styled Components </a> </li>
+  <li> <a href="https://www.emailjs.com" target="_blank"> Email Js </a> </li>
+  <li> <a href="https://testing-library.com/docs/react-testing-library/intro/" target="_blank"> React Testing Library </a> </li> 
+  <li> <a href="https://formik.org/docs/overview" target="_blank"> Formik </a> </li>
+  <li> <a href="https://www.npmjs.com/package/yup" target="_blank"> Yup </a> </li>
+  <li> <a href="https://www.npmjs.com/package/md5" target="_blank"> Md5 </a> </li> 
+  <li> <a href="https://axios-http.com/docs/intro" target="_blank"> Axios </a> </li>
+  <li> <a href="https://momentjs.com" target="_blank"> Moment </a> </li>
+  <li> <a href="https://fkhadra.github.io/react-toastify/introduction" target="_blank"> React Toastify </a> </li>
+</ul>
+
+## Scripts do Package
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Inicia o projeto em desenvolvimento. Acessar via http://localhost:3000 para visualizar o projeto no navegador.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar o arquivo de coverage ir no diretório coverage\lcov-report\index.html e abrir no navegador ou acessar pela extensão Live server do Visual Studio Code. 
 
-### `yarn build`
+#### Aplicação responsiva para resoluções 1366x768 acima
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
