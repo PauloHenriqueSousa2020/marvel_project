@@ -32,7 +32,7 @@ Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar
 <table>
 	<tr>
 		<th width="100%">
-			Aplicação com o light theme<br>
+			<h4>Aplicação com o light theme</h4>
 		</th>
 	</tr>
 	<tr>
@@ -42,7 +42,7 @@ Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar
 	</tr>
 		<tr>
 		<th width="100%">
-			Aplicação com o dark theme<br>
+			<h4>Aplicação com o dark theme</h4>
 		</th>
 	</tr>
 	<tr>
@@ -52,7 +52,7 @@ Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar
 	</tr>
 		<tr>
 		<th width="100%">
-			Detalhe de um quadrinho com light theme<br>
+			<h4>Detalhe de um quadrinho com light theme<h4/>
 		</th>
 	</tr>
 	<tr>
@@ -62,7 +62,7 @@ Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar
 	</tr>
 		<tr>
 		<th width="100%">
-			Detalhe de um quadrinho com dark theme<br>
+			<h4>Detalhe de um quadrinho com dark theme</h4>
 		</th>
 	</tr>
 	<tr>
