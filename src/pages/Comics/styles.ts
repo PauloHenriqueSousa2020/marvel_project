@@ -51,6 +51,7 @@ export const Section = styled.div`
   background: ${props => props.theme.colors.sectionBackground};
   width: 100%;
   height: 100%;
+  display: grid;
   grid-gap: 7rem;
   justify-content: center;
   border-radius: 1rem;
