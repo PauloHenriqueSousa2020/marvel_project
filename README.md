@@ -16,7 +16,7 @@
   <li> <a href="https://fkhadra.github.io/react-toastify/introduction" target="_blank"> React Toastify </a> </li>
 </ul>
 
-#### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
+### Para visualizar a aplicação no github pages acessar o link: https://paulohenriquesousa2020.github.io/marvel_project/
 
 ## Scripts do Package
 
