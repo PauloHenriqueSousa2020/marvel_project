@@ -26,6 +26,51 @@ Inicia o projeto em desenvolvimento. Acessar via http://localhost:3000 para visu
 
 Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar o arquivo de coverage ir no diretório coverage\lcov-report\index.html e abrir no navegador ou acessar pela extensão Live server do Visual Studio Code. 
 
+<h3> Interface WEB: </h3>
+<table>
+	<tr>
+		<th width="100%">
+			Aplicação com o light theme<br>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<img src="img/Light_theme.png" >
+		</td>
+	</tr>
+		<tr>
+		<th width="100%">
+			Aplicação com o dark theme<br>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<img src="img/Dark_theme.png" >
+		</td>
+	</tr>
+		<tr>
+		<th width="100%">
+			Detalhe de um quadrinho com light theme<br>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<img src="img/Detail_light.png" >
+		</td>
+	</tr>
+		<tr>
+		<th width="100%">
+			Detalhe de um quadrinho com dark theme<br>
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<img src="img/Detail_dark.png" >
+		</td>
+	</tr>
+  </tr>
+  </table>
+  
 #### Aplicação responsiva para resoluções 1366x768 acima
 
 #### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
