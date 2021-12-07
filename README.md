@@ -16,6 +16,8 @@
   <li> <a href="https://fkhadra.github.io/react-toastify/introduction" target="_blank"> React Toastify </a> </li>
 </ul>
 
+#### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
+
 ## Scripts do Package
 
 ### `yarn start`
@@ -71,6 +73,9 @@ Inicia o projeto de testes da aplicação com o coverage de testes. Para acessar
   </tr>
   </table>
   
-#### Aplicação responsiva para resoluções 1366x768 acima
+#### Aplicação responsiva para resoluções 1366x768 acima.
 
-#### Para visualizar a aplicação no github pages acessar o link https://paulohenriquesousa2020.github.io/marvel_project/
+<h3> Coverage: </h3>
+
+<img src="img/Coverage.png" >
+
