@@ -51,8 +51,6 @@ export const Section = styled.div`
   background: ${props => props.theme.colors.sectionBackground};
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: 7rem;
   justify-content: center;
   border-radius: 1rem;
@@ -61,8 +59,12 @@ export const Section = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1366px) and (max-width: 1520px) {
+  @media (min-width: 1366px) and (max-width: 1600px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1600px) and (max-width: 1920px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   @media (min-width: 1920px) and (max-width: 2280px) {
