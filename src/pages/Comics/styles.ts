@@ -60,11 +60,11 @@ export const Section = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1366px) and (max-width: 1600px) {
+  @media (min-width: 1366px) and (max-width: 1630px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 1600px) and (max-width: 1920px) {
+  @media (min-width: 1630px) and (max-width: 1920px) {
     grid-template-columns: repeat(4, 1fr);
   }
 

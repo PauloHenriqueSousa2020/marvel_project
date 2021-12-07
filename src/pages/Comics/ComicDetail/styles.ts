@@ -26,11 +26,11 @@ export const Container = styled.div`
     width: 85vw;
   }
 
-  @media (min-width: 1366px) and (max-width: 1600px) {
+  @media (min-width: 1366px) and (max-width: 1630px) {
     width: 85vw;
   }
 
-  @media (min-width: 1600px) and (max-width: 1920px) {
+  @media (min-width: 1630px) and (max-width: 1920px) {
     width: 75vw;  
   }
 
